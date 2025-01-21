@@ -1,0 +1,31 @@
+[package]
+name = "rust-dev"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+codegen-units = 1
+debug = false
+debug-assertions = false
+incremental = false
+lto = "thin"
+opt-level = 3
+overflow-checks = false
+panic = 'unwind'
+rpath = false
+strip = false
+
+[dependencies]
+tokio-stream = "0.1"
+tokio = { version = "1", features = [
+    "rt-multi-thread",
+    "sync",
+    "time",
+    "macros",
+] }
+anyhow = "1"
+clap = { version = "4.5.22", features = ["derive"] }
+
+[features]
+testnet = []
+default = []
