@@ -37,12 +37,12 @@ mod normal_tests {
 
     /*
     3. Copy 和 Clone 的区别
-    特性	Copy	Clone
-    复制方式	隐式（自动）	显式（需要调用 .clone()）
-    所有权	复制值，不转移所有权	复制值，不转移所有权
-    实现复杂度	必须是简单的位复制	可以包含复杂的逻辑（如深拷贝）
-    适用类型	简单类型（如整数、浮点数）	复杂类型（如 String、Vec）
-    Trait 方法	无方法（标记 trait）	有 clone 方法
+    特性	           Copy	                  Clone
+    复制方式	      隐式（自动）	          显式（需要调用 .clone()）
+    所有权	      复制值，不转移所有权	      复制值，不转移所有权
+    实现复杂度	  必须是简单的位复制	      可以包含复杂的逻辑（如深拷贝）
+    适用类型	      简单类型(如整数、浮点数)    复杂类型（如 String、Vec）
+    Trait 方法	  无方法（标记 trait）	  有 clone 方法
     */
     #[tokio::test]
     async fn test_normal_copy_and_clone() {
