@@ -47,6 +47,7 @@ mod normal_tests {
     #[tokio::test]
     async fn test_normal_copy_and_clone() {
         #[derive(Copy, Clone, Debug)]
+        #[allow(dead_code)]
         struct Point {
             x: i32,
             y: i32,
@@ -56,6 +57,7 @@ mod normal_tests {
         println!("p1 {:?} p2 {:?}", p1, p2);
 
         #[derive(Clone, Debug)]
+        #[allow(dead_code)]
         struct Person {
             name: String,
             age: u8,
