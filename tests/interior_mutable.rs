@@ -30,9 +30,13 @@ mod interior_mutable_tests {
 
         assert_eq!(*data.borrow(), 45);
         assert_eq!(*clone.borrow(), 45);
-        println!("data borrow {}, clone borrow {}", data.borrow(), clone.borrow());
+        println!(
+            "data borrow {}, clone borrow {}",
+            data.borrow(),
+            clone.borrow()
+        );
     }
-    
+
     /*
     在 Rust 中，Rc（引用计数，Reference Counting）是一种智能指针，用于在多个地方共享数据的所有权。
     Rc 通过引用计数来管理内存，当最后一个引用被丢弃时，数据会被自动清理。Rc 的主要用途
