@@ -69,4 +69,18 @@ mod normal_tests {
         let p2 = p1.clone();
         println!("p1 {:?} p2 {:?}", p1, p2);
     }
+
+    #[tokio::test]
+    async fn test_normal_size() {
+        struct A;
+        enum Empty {}
+
+        println!("Size of empty struct A: {}", std::mem::size_of::<A>());
+        println!("Size of empty tuple: {}", std::mem::size_of::<()>());
+        println!("Size of empty enum: {}", std::mem::size_of::<Empty>());
+        println!(
+            "Size of empty [i32; 0]: {}",
+            std::mem::size_of::<[i32; 0]>()
+        );
+    }
 }
